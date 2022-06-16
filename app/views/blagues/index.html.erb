@@ -1,0 +1,14 @@
+<div>Voici toutes les blagues : </div>
+<br />
+
+<% @blague.each do |blague| %>
+  <div>Nom : <%= blague.nom%></div>
+  <div>Contenu : <%= blague.contenu%></div>
+  <div>Rédigé par : <%= blague.auteur%></div>
+  <div><%= link_to "Voir plus", blague_path(blague) %></div>
+  <div><%= link_to "Modifier", edit_blague_path(blague) %></div>
+  <div><%= button_to "Supprimer la blague", blague_path(blague), method: :delete %></div>
+  <br />
+<%end%>
+
+<div><%= link_to "Créer votre blague !", new_blague_path()%></div>
